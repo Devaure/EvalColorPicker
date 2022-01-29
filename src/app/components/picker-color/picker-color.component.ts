@@ -1,4 +1,5 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { hasLifecycleHook } from '@angular/compiler/src/lifecycle_reflector';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-picker-color',
@@ -7,14 +8,10 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 })
 export class PickerColorComponent implements AfterViewInit {
 
-  @ViewChild('sliderone', {read:ElementRef}) public sliderone!: ElementRef;
-  @ViewChild('slidertwo', {read:ElementRef}) public slidertwo!: ElementRef;
-  @ViewChild('sliderthree', {read:ElementRef}) public sliderthree!: ElementRef;
 
-
-  public hue:number=0;
-  public sat:number = 0;
-  public light:number = 0;
+  @Input()public hue:number=0;
+  @Input()public sat:number = 0;
+  @Input()public light:number = 0;
 
   title:string = "ColorPicker";
   rangeMinHue:number = 0;
@@ -24,13 +21,21 @@ export class PickerColorComponent implements AfterViewInit {
   rangeMinLight:number = 0;
   rangeMaxLight:number = 100;
 
+  colors={
+    thehue: "",
+    theSat: "",
+    theLight: ""
+  }
+
   constructor() { }
   ngAfterViewInit(): void {
-   console.log(this.sliderone.nativeElement.value);
+  
+   
    
   }
 
   ngOnInit(): void {
+  
   }
 
   setValue(e:Event){
@@ -44,5 +49,20 @@ export class PickerColorComponent implements AfterViewInit {
   setValueSlideThree(e:Event){
     this.light = parseInt((<HTMLInputElement>e.target).value);
   }
+
+  myStyle(){
+    return `hsl(${this.hue}, ${this.sat}%, ${this.light}%)`
+  }
+
+  myStyleSecondary(){
+    return `hsl(${this.hue+30}, ${this.sat}%, ${this.light}%)`
+  }
+
+  myStyleTertiary(){
+    return `hsl(${this.hue+180}, ${this.sat}%, ${this.light}%)`
+  }
+ 
+
+ 
 
 }
