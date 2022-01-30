@@ -25,4 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# EvalColorPicker
+# EvalColorPicker  
+`Permet à l'utilisateur de définir la couleur HSL soit par les glissières soit dans les différents champs (input)`
+
+## Avant le lancer l'application 
+Run `npm install`
+
+## Lancement de l'application 
+Run `ng serve -o`
+
