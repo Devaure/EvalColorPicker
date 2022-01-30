@@ -9,9 +9,9 @@ import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '
 export class PickerColorComponent implements AfterViewInit {
 
 
-  @Input()public hue:number=0;
-  @Input()public sat:number = 0;
-  @Input()public light:number = 0;
+  @Input()public hue!:number;
+  @Input()public sat!:number;
+  @Input()public light!:number;
 
   title:string = "ColorPicker";
   rangeMinHue:number = 0;
@@ -29,13 +29,7 @@ export class PickerColorComponent implements AfterViewInit {
 
   constructor() { }
   ngAfterViewInit(): void {
-  
-   
-   
-  }
-
-  ngOnInit(): void {
-  
+ 
   }
 
   setValue(e:Event){

@@ -1,7 +1,7 @@
 .card{
     position: relative;
-    margin: 100px;
-    background-color: white;
+    margin: 50px;
+    border-radius: 5px;
     height: 400px;
     width: auto;
     -webkit-box-shadow: 3px 4px 9px -1px rgba(0,0,0,0.66); 
@@ -16,6 +16,7 @@
     &__cube{
         margin-left: 10px;
         background-color: rgb(252, 250, 250);
+        margin-top: 20px;
         margin-bottom: 100px;
         height: 100px;
         width: 100px;
@@ -25,21 +26,44 @@
 
     &__pre{
         position: relative;
-        color: #064656;
+        color: hsl(224, 48%, 88%);
+        border: 2px solid hsl(272, 60%, 50%);
+        font-weight: 500;
         border-radius: 5px;
-        bottom: 79px;
+        bottom: 163px;
         white-space: break-spaces;
         width: 308px;
         height: 100px;
-        background-color: #d3d2d2;
+        background-color: hsl(194, 48%, 53%);
         text-align: center;
         padding: 10px;
         left: 17px;
+        line-height: 5px;
+    }
+
+    &__input-value{
+        position: relative;
+        top:62px;
+        left: 280px;
+        display: flex;
+        flex-direction: column;  
+    }
+
+    &__value-user{
+      text-align: center;
+      margin-top: 3px;
+      border-radius: 5px;
+      border: 2px solid hsl(272, 60%, 50%);
+      color:hsl(224, 48%, 88%);
+      outline: none;
+      width: 60px;
+      background-color: hsl(194, 48%, 53%);
+      
     }
 
     &__slider{
         position: relative;
-        bottom: 174px;
+        bottom: 234px;
         left: 400px;
         width: 240px;
     }
@@ -50,14 +74,14 @@ h1{
     top: 15px;
     text-align: center;
     font-size: 30px;
-    color: hsl(192, 87%, 18%);
+    color: hsl(194, 48%, 53%);
 }
 
 label{
     position: relative;
     bottom:3px;
     margin-left: 5px;
-    color: hsl(192, 87%, 18%);
+    color: hsl(194, 48%, 53%);
     font-weight: bold;
 }
 
