@@ -1,6 +1,6 @@
-
-<div class="card">
     <h1>{{title}}</h1>
+<div class="card">
+
     <div class="card__cube-display">
       <div class="card__cube" [ngStyle]="{'background-color':myStyle()}"></div>
       <div class="card__cube" [ngStyle]="{'background-color':myStyleSecondary()}"></div>
@@ -9,26 +9,30 @@
     
    
     <div class="card__slider">
+      <div class="card__input-value">
+        <span><input (keydown)="setValue($event)" value="{{hue}}" class="card__value-user" type="number" placeholder="Hue"></span>
+        <span><input (keydown)="setValueSlideTwo($event)" value="{{sat}}" class="card__value-user" type="number" placeholder="Sat %"></span>
+        <span><input (keydown)="setValueSlideThree($event)" value="{{light}}" class="card__value-user" type="number" placeholder="Light %"></span>
+      </div>
         <div>
-            <input #sliderone type="range" (change)="setValue($event)" id="hue" name="hue" min="{{rangeMinHue}}" max="{{rangeMaxHue}}"  step="0.1" value="0">
+            <input #sliderone type="range" (change)="setValue($event)" id="hue" name="hue" min="{{rangeMinHue}}" max="{{rangeMaxHue}}"  step="0.1" value="{{hue}}">
             <label for="volume">Hue</label>
           </div>
           
           <div>
-            <input #slidertwo type="range" (change)="setValueSlideTwo($event)" id="Saturation" name="Saturation" min="{{rangeMinSat}}" max="{{rangeMaxSat}}"  step="0.1" value="0">
+            <input #slidertwo type="range" (change)="setValueSlideTwo($event)" id="Saturation" name="Saturation" min="{{rangeMinSat}}" max="{{rangeMaxSat}}"  step="0.1" value="{{sat}}">
             <label for="Saturation">Saturation</label>
           </div>
           <div>
-            <input #sliderthree type="range" (change)="setValueSlideThree($event)" id="cowbell" name="cowbell" min="{{rangeMinLight}}" max="{{rangeMaxLight}}" step="0.1" value="0">
+            <input #sliderthree type="range" (change)="setValueSlideThree($event)" id="cowbell" name="cowbell" min="{{rangeMinLight}}" max="{{rangeMaxLight}}" step="0.1" value="{{light}}">
             <label for="cowbell">Lightness</label>
           </div>
     </div>
     <div class="card__pre">
-        :root<br>
-          --clr-primary: hsl({{hue}} , {{sat}}% , {{light}}% )<br>
-          --clr-secondary: hsl({{ hue + 30}}, {{sat}}%, {{light}}%)<br>
-          --clr-tertiary: hsl( {{hue+180}}, {{sat}}%, {{light}}%)
-        
+        <p>:root</p>
+        <p>--clr-primary: hsl({{hue}}, {{sat}}% , {{light}}%)</p> 
+        <p>--clr-secondary: hsl({{hue + 30}}, {{sat}}%, {{light}}%)</p>
+        <p>--clr-tertiary: hsl( {{hue+180}}, {{sat}}%, {{light}}%)</p>
     </div>
 </div> 
 
