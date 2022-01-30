@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # EvalColorPicker  
 `Permet à l'utilisateur de définir la couleur HSL soit par les glissières soit dans les différents champs (input)`
 
-## Avant le lancer l'application 
+## Avant de lancer l'application 
 Run `npm install`
 
 ## Lancement de l'application 
